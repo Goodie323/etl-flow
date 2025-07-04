@@ -1,22 +1,37 @@
 Overview
 ========
 
-Welcome to Astronomer! This project was generated after you ran 'astro dev init' using the Astronomer CLI. This readme describes the contents of the project, as well as how to run Apache Airflow on your local machine.
+ ETL Project with Apache Airflow (Astronomer)
+Welcome to my ETL project powered by Apache Airflow using Astronomer CLI. This setup was initialized with astro dev init and is designed to streamline and orchestrate data pipelines locally before deploying to production environments
 
 Project Contents
 ================
+Project Structure
+This project includes the following directories and files:
 
-This contains the following files and folders:
+dags/
+Contains your Airflow DAGs (Directed Acyclic Graphs).
 
-- dags: This folder contains the Python files for your Airflow DAGs. By default, this directory includes one example DAG:
-    - `example_astronauts`: This DAG shows a simple ETL pipeline example that queries the list of astronauts currently in space from the Open Notify API and prints a statement for each astronaut. The DAG uses the TaskFlow API to define tasks in Python, and dynamic task mapping to dynamically print a statement for each astronaut. For more on how this DAG works, see our [Getting started tutorial](https://www.astronomer.io/docs/learn/get-started-with-airflow).
-- Dockerfile: This file contains a versioned Astro Runtime Docker image that provides a differentiated Airflow experience. If you want to execute other commands or overrides at runtime, specify them here.
-- include: This folder contains any additional files that you want to include as part of your project. It is empty by default.
-- packages.txt: Install OS-level packages needed for your project by adding them to this file. It is empty by default.
-- requirements.txt: Install Python packages needed for your project by adding them to this file. It is empty by default.
-- plugins: Add custom or community plugins for your project to this file. It is empty by default.
-- airflow_settings.yaml: Use this local-only file to specify Airflow Connections, Variables, and Pools instead of entering them in the Airflow UI as you develop DAGs in this project.
+example_astronauts.py: A sample DAG that demonstrates a simple ETL process. It fetches data from the Open Notify API to list astronauts currently in space using the TaskFlow API and dynamic task mapping.
+💡 Great for getting started!
 
+include/
+For any additional resources (e.g. SQL files, templates). Empty by default.
+
+plugins/
+Add custom or community Airflow plugins here. Empty by default.
+
+Dockerfile
+Defines the Astro Runtime Docker image. Customize it for your project-specific execution or dependency overrides.
+
+requirements.txt
+List all Python dependencies required for your DAGs or tasks.
+
+packages.txt
+Add OS-level packages here if needed (e.g. libsasl2-dev, unixODBC, etc.).
+
+airflow_settings.yaml
+Configure Airflow Connections, Variables, and Pools locally instead of using the UI. Ideal for reproducibility.
 Deploy Your Project Locally
 ===========================
 
@@ -34,9 +49,10 @@ When all five containers are ready the command will open the browser to the Airf
 
 Note: If you already have either of the above ports allocated, you can either [stop your existing Docker containers or change the port](https://www.astronomer.io/docs/astro/cli/troubleshoot-locally#ports-are-not-available-for-my-local-airflow-webserver).
 
-Deploy Your Project to Astronomer
+ Contributing
 =================================
 
-If you have an Astronomer account, pushing code to a Deployment on Astronomer is simple. For deploying instructions, refer to Astronomer documentation: https://www.astronomer.io/docs/astro/deploy-code/
+ Contributing
+Feel free to clone, fork, or contribute to this project. This setup serves as a boilerplate for developing scalable and robust ETL pipelines with Apache Airflow.e/
 
 
