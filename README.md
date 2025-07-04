@@ -32,6 +32,7 @@ Add OS-level packages here if needed (e.g. libsasl2-dev, unixODBC, etc.).
 
 airflow_settings.yaml
 Configure Airflow Connections, Variables, and Pools locally instead of using the UI. Ideal for reproducibility.
+
 Deploy Your Project Locally
 ===========================
 
